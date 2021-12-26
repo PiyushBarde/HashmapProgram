@@ -22,6 +22,10 @@ public class MyHashMap<K extends Comparable, V> {
             myMapNode.setValue(value);
         }
     }
+    public void printHashMap()
+    {
+        myLinkedList.printMyNodes();
+    }
 
     @Override
     public String toString() {
