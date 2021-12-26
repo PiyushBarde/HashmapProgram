@@ -12,6 +12,12 @@ public class MyHashMap<K extends Comparable, V> {
         MyMapNode<K,V> myMapNode =(MyMapNode<K, V>)this.myLinkedList.search(key);
         return (myMapNode == null)? null : myMapNode.getValue();
     }
+    public void remove(K key){
+        MyMapNode<K,V> myMapNode = (MyMapNode<K,V>) this.myLinkedList.search(key);
+        if(myMapNode != null) {
+            this.myLinkedList.delete(myMapNode);
+        }
+    }
     public void add(K key, V value) {
         MyMapNode<K,V> myMapNode =(MyMapNode<K,V>)this.myLinkedList.search(key);
         if(myMapNode == null) {

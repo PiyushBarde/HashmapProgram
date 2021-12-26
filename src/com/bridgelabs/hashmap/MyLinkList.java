@@ -60,6 +60,19 @@ class MyLinkedList<K extends Comparable> {
         }
         return null;
     }
+    public void remove(INode<K> anyNode){
+        INode tempNode = this.head;
+        if ( anyNode.equals(this.head)) pop();
+        if ( anyNode.equals(this.tail)) popLast();
+        while (!(tempNode.getNext().equals(tail))){
+            if (tempNode.getNext().getKey().equals(anyNode.getKey())){
+                INode tempNode1 = tempNode.getNext().getNext();
+                tempNode.setNext(tempNode1);
+                break;
+            }
+            tempNode = tempNode.getNext();
+        }
+    }
 
     public  void printMyNodes(){
         System.out.println("My Nodes: "+head);
@@ -70,4 +83,17 @@ class MyLinkedList<K extends Comparable> {
         return "MyLinkedListNodes{"+ head + '}';
     }
 
+    public void delete(INode<K> anyNode){
+        INode tempNode = this.head;
+        if ( anyNode.equals(this.head)) pop();
+        if ( anyNode.equals(this.tail)) popLast();
+        while (!(tempNode.getNext().equals(tail))){
+            if (tempNode.getNext().getKey().equals(anyNode.getKey())){
+                INode tempNode1 = tempNode.getNext().getNext();
+                tempNode.setNext(tempNode1);
+                break;
+            }
+            tempNode = tempNode.getNext();
+        }
+    }
 }
